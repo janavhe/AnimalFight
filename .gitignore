@@ -42,3 +42,4 @@ nb-configuration.xml
 target/
 .project
 *.iml
+out/
