@@ -1,6 +1,8 @@
 package PokemonGame;
 
-    public class Pokemon {
+import java.io.Serializable;
+
+public class Pokemon implements Serializable {
     protected String nombre;
     protected String tipo;
     protected Integer vida;
@@ -68,4 +70,14 @@ package PokemonGame;
         public void setAtaque(Integer ataque) {
             this.ataque = ataque;
         }
+
+    @Override
+    public String toString() {
+        return "Pokemon{" +
+                "nombre='" + nombre + '\'' +
+                ", tipo='" + tipo + '\'' +
+                ", vida=" + vida +
+                ", ataque=" + ataque +
+                '}';
     }
+}
