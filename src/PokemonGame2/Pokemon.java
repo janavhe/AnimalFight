@@ -3,7 +3,7 @@ package PokemonGame2;
 public class Pokemon  {
 
         protected String nombre;
-        protected Fuego tipo;
+        protected String tipo;
         protected Tipo tipoDos;
         protected Integer vida;
         protected Integer ataque;
