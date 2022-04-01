@@ -3,9 +3,6 @@ package PokemonGame;
 public class Planta extends Pokemon implements DebilContraFuego{
 
 
-    public Planta() {
-    }
-
     public Planta(String nombre, String tipo, Integer vida, Integer ataque) {
         super(nombre, tipo, vida, ataque);
     }

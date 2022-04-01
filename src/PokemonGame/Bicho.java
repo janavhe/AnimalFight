@@ -2,8 +2,6 @@ package PokemonGame;
 
 public class Bicho extends Pokemon implements DebilContraFuego{
 
-    public Bicho() {
-    }
 
     public Bicho(String nombre, String tipo, Integer vida, Integer ataque) {
         super(nombre, tipo, vida, ataque);

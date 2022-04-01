@@ -2,8 +2,6 @@ package PokemonGame;
 
 public class Tierra extends Pokemon implements DebilContraPlante,DebilContraAgua{
 
-    public Tierra() {
-    }
 
     public Tierra(String nombre, String tipo, Integer vida, Integer ataque) {
         super(nombre, tipo, vida, ataque);

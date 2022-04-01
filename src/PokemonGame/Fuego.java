@@ -2,8 +2,6 @@ package PokemonGame;
 
 public class Fuego extends Pokemon implements DebilContraAgua,DebilContraTierra{
 
-    public Fuego() {
-    }
 
     public Fuego(String nombre, String tipo, Integer vida, Integer ataque) {
         super(nombre, tipo, vida, ataque);

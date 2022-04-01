@@ -1,9 +1,7 @@
 package PokemonGame;
 
 public class Agua extends Pokemon implements DebilContraPlante{
-
-    public Agua() {
-    }
+    
 
     public Agua(String nombre, String tipo, Integer vida, Integer ataque) {
         super(nombre, tipo, vida, ataque);
