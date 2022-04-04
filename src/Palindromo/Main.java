@@ -1,4 +1,4 @@
-package Palindromo2;
+package Palindromo;
 
 import java.text.Normalizer;
 import java.util.*;
@@ -29,11 +29,11 @@ public class Main {
     //Invertir la palabra
     public static StringBuilder invertirPalabra(String conversion){
 
-        String nornal = conversion;
+//        String nornal = conversion;
 
         StringBuilder invertida = new StringBuilder();
 
-        invertida.append(nornal);
+        invertida.append(conversion);
 
         invertida.reverse();
 
