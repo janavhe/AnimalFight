@@ -64,7 +64,7 @@ public class Main {
     public static String filtroAcentos (String palabraFiltar){
         String original =  palabraFiltar;
         String cadenaNormalize = Normalizer.normalize(original, Normalizer.Form.NFD);
-        String cadenaSinAcentos = cadenaNormalize.replaceAll("[^\\p{ASCII}]", "");
+        String cadenaSinAcentos = cadenaNormalize.trim();//replaceAll("[^\\p{ASCII}]", "");
 
         return cadenaSinAcentos;
     }

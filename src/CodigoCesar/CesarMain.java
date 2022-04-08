@@ -56,22 +56,49 @@ public class CesarMain {
     }
 
     public static String cifradoCesar(String fraseSinCodificar, int espacios) {
-        String texto = fraseSinCodificar;
-        int n = espacios;
-        char[] ch = texto.toCharArray();
-        for (int i = 0; i < ch.length; i++) {
-            ch[i] = (char) ((char) ch[i] + n);
-            System.out.print(ch[i]);
-        } return null;
+//        String texto = fraseSinCodificar;
+//        char[] ch = texto.toCharArray();
+//        // 1.5N
+//        for (int i = 0; i < ch.length; i++) {// 0.5
+//            ch[i] = (char) ((char) ch[i] + n);// 0.5
+//            System.out.print(ch[i]); //0.5
+//        } return null;
+        StringBuilder cifrado = new StringBuilder();
+        int n = espacios % 26;
+
+        for (int contador = 0; contador < fraseSinCodificar.length(); contador++) {
+            if ((fraseSinCodificar.charAt(contador) + espacios) > 'z') {
+                cifrado.append((char) (fraseSinCodificar.charAt(contador) + espacios - 26));
+            } else {
+                cifrado.append((char) (fraseSinCodificar.charAt(contador) + espacios));
+            }
+
+        }
+        System.out.println(cifrado.toString());
+        return cifrado.toString();
     }
 
     public static String decifradoCesar(String fraseSinCodificar, int espacios) {
-        String texto = fraseSinCodificar;
-        int n = espacios;
-        char[] ch = texto.toCharArray();
-        for (int i = 0; i < ch.length; i++) {
-            ch[i] = (char) ((char) ch[i] - n);
-            System.out.print(ch[i]);
-        } return null;
+//        String texto = fraseSinCodificar;
+//        int n = espacios%26;
+//        char[] ch = texto.toCharArray();
+//        for (int i = 0; i < ch.length; i++) {
+//            ch[i] = (char) ((char) ch[i] - n);
+//            System.out.print(ch[i]);
+//        } return null;
+
+        StringBuilder cifrado = new StringBuilder();
+        int n = espacios % 26;
+        for (int contador = 0; contador < fraseSinCodificar.length(); contador++) {
+            if ((fraseSinCodificar.charAt(contador) + espacios) > 'z') {
+                cifrado.append((char) (fraseSinCodificar.charAt(contador) - espacios + 26));
+            } else {
+                cifrado.append((char) (fraseSinCodificar.charAt(contador) - espacios));
+            }
+
+        }
+        System.out.println(cifrado.toString());
+        return cifrado.toString();
+
     }
 }

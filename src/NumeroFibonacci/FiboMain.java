@@ -7,8 +7,9 @@ public class FiboMain {
     public static void main(String[] args) {
         int numerFibo = pedirNUmero();
 
-        numeroFibonacci(numerFibo);
+        //numeroFibonacci(numerFibo);
 
+        System.out.println(fibonacciRecursiva(numerFibo));
     }
 
 
@@ -36,5 +37,12 @@ public class FiboMain {
         System.out.println("El "+i +"° numero de Fibonacci es " +Fxn);
         System.out.println("------------------------------------------");
         return Fxn;
+    }
+
+    public static int fibonacciRecursiva (int numero){
+        if (numero ==  0){return 0;}
+        else if( numero == 1){return  1;}
+        else {return fibonacciRecursiva(numero-1)+fibonacciRecursiva(numero-2);}
+
     }
 }
