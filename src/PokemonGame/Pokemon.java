@@ -3,7 +3,9 @@ package PokemonGame;
 import java.io.*;
 
 public class Pokemon implements Serializable {
+
     private static final long serialVersionUID = 1L;
+
     protected String nombre;
     protected String tipo;
     protected Integer vida;
@@ -27,6 +29,7 @@ public class Pokemon implements Serializable {
         this.vida = vida;
         this.ataque = ataque;
     }
+
 
     public Pokemon(Pokemon datosDelArchivo) {
 
@@ -88,6 +91,9 @@ public class Pokemon implements Serializable {
     public Hielo getHielo() { return hielo; }
 
     public void setHielo(Hielo hielo) { this.hielo = hielo; }
+
+
+
 
     @Override
     public String toString() {

@@ -2,26 +2,60 @@ package inputsOutput;
 
 import PokemonGame.Hielo;
 import PokemonGame.Pokemon;
+import enumExample.ArchivosEnum;
 
+import java.awt.*;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.DataFlavor;
+import java.awt.datatransfer.StringSelection;
+import java.awt.datatransfer.UnsupportedFlavorException;
 import java.io.*;
 import java.util.Scanner;
+import java.util.stream.IntStream;
 
 public class DanielClaseMain {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, UnsupportedFlavorException {
 
-
-        Pokemon charizard = new Pokemon("charizard","Fuego", 120,7,new Hielo("Ninetales","Hielo",120,50));
-
-//        String lecturaDelTeclado = leerDelTeclado();
-//        String lecturaDelArchivo = leerDeArchivo("D:/Prueba/hola.txt");
 //
-//        escribirEnArchivo("D:/Prueba/holaSalidaTeclado.txt", lecturaDelTeclado);
-//        escribirEnArchivo("D:/Prueba/holaSalidaArchivo.txt", lecturaDelArchivo);
-        escribirEnArchivo("D:/Prueba/salidaDePokemon.txt", charizard);
+//        Pokemon charizard = new Pokemon("charizard","Fuego", 120,7,new Hielo("Ninetales","Hielo",120,50));
+//        Pokemon charmander = new Pokemon("charizard","Fuego", 120,7,new Hielo("Ninetales","Hielo",120,50));
+//        Pokemon charmilion = new Pokemon("charizard","Fuego", 120,7,new Hielo("Ninetales","Hielo",120,50));
+//
+////        String lecturaDelTeclado = leerDelTeclado();
+////        String lecturaDelArchivo = leerDeArchivo("D:/Prueba/hola.txt");
+////
+////        escribirEnArchivo("D:/Prueba/holaSalidaTeclado.txt", lecturaDelTeclado);
+////        escribirEnArchivo("D:/Prueba/holaSalidaArchivo.txt", lecturaDelArchivo);
+//        escribirEnArchivo(ArchivosEnum.ARCHIVO_DANIEL.getRutaDeArchivo(), charizard);
+//
+//        escribirEnArchivo(ArchivosEnum.ARCHIVO_JAZZIEL.getRutaDeArchivo(), charizard);
+//
+//
+//        Pokemon lecturaDelPokemon = leerDeArchivoObjeto ("D:\\Prueba\\salidaDePokemon.txt");
+//        System.out.println(lecturaDelPokemon);
 
 
-        Pokemon lecturaDelPokemon = leerDeArchivoObjeto ("D:\\Prueba\\salidaDePokemon.txt");
-        System.out.println(lecturaDelPokemon);
+        String cadenaFromClipboard = getFromClipBoard();
+        System.out.println(cadenaFromClipboard);
+
+        cadenaFromClipboard = cadenaFromClipboard + " Modificada desde java gg salu2";
+        putFromClipBoard(cadenaFromClipboard);
+
+
+        int suma = 0;
+        for (int i = 0; i < 100;i++){
+            if (i % 2 == 0){
+                suma+=i;
+                //COneccion de datos
+                //Mandar mensajes a celular
+                //Mandar una oprden a amazon
+            }
+        }
+        System.out.println(suma);
+
+
+
+
     }
 
 
@@ -155,5 +189,20 @@ public class DanielClaseMain {
         }
         return null;
     }
+
+
+    public static String getFromClipBoard() throws IOException, UnsupportedFlavorException {
+        String data = (String) Toolkit.getDefaultToolkit()
+                .getSystemClipboard().getData(DataFlavor.stringFlavor);
+        return data;
+    }
+
+    public static void putFromClipBoard(String text) throws IOException, UnsupportedFlavorException{
+
+        StringSelection stringSelection = new StringSelection(text);
+        Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+        clipboard.setContents(stringSelection, null);
+    }
+
 }
 
