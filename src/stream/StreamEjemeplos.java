@@ -69,6 +69,7 @@ public class StreamEjemeplos {
         //Contamos
         System.out.println(listaUsuario.stream().count());
         System.out.println("------------");
+
         //Contamos si cumple con un filtro
         System.out.println(listaUsuario.stream()
                 .map(z ->
